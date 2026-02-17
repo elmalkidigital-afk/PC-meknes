@@ -40,14 +40,22 @@
         <span></span>
         <span></span>
       </button>
+      <div class="lang-switcher">
+        <button class="lang-btn active" data-btn-lang="fr" title="Français">
+          <span class="flag">🇫🇷</span> FR
+        </button>
+        <button class="lang-btn" data-btn-lang="darija" title="Darija">
+          <span class="flag">🇲🇦</span> دارجة
+        </button>
+      </div>
       <ul class="nav-menu" id="navMenu">
-        <li><a href="#hero" class="nav-link">Accueil</a></li>
-        <li><a href="#services-pc" class="nav-link">Services PC</a></li>
-        <li><a href="#services-mobile" class="nav-link">Mobile</a></li>
-        <li><a href="#pourquoi" class="nav-link">Pourquoi Nous</a></li>
-        <li><a href="#tarifs" class="nav-link">Tarifs</a></li>
-        <li><a href="#parcours" class="nav-link">Parcours</a></li>
-        <li><a href="#contact" class="nav-link nav-cta">Contact</a></li>
+        <li><a href="#hero" class="nav-link" data-i18n="nav-home">Accueil</a></li>
+        <li><a href="#services-pc" class="nav-link" data-i18n="nav-services-pc">Services PC</a></li>
+        <li><a href="#services-mobile" class="nav-link" data-i18n="nav-services-mobile">Mobile</a></li>
+        <li><a href="#pourquoi" class="nav-link" data-i18n="nav-why">Pourquoi Nous</a></li>
+        <li><a href="#tarifs" class="nav-link" data-i18n="nav-tarifs">Tarifs</a></li>
+        <li><a href="#parcours" class="nav-link" data-i18n="nav-parcours">Parcours</a></li>
+        <li><a href="#contact" class="nav-link nav-cta" data-i18n="nav-contact">Contact</a></li>
       </ul>
     </div>
   </nav>
@@ -57,31 +65,29 @@
     <div class="hero-bg-pattern"></div>
     <div class="container hero-container">
       <div class="hero-content fade-in">
-        <span class="hero-badge"><i class="fas fa-shield-halved"></i> Auto-Entrepreneur Inscrit</span>
-        <h1>Réparation PC & Mobile<br>à <span class="text-gradient">Meknès</span></h1>
-        <p class="hero-subtitle">Diagnostic gratuit. Intervention rapide à domicile ou en atelier.<br>Votre expert
-          informatique de confiance.</p>
+        <span class="hero-badge" data-i18n="hero-badge"><i class="fas fa-shield-halved"></i> Auto-Entrepreneur
+          Inscrit</span>
+        <h1 data-i18n="hero-title">Réparation PC & Mobile<br>à <span class="text-gradient">Meknès</span></h1>
+        <p class="hero-subtitle" data-i18n="hero-subtitle">Diagnostic gratuit. Intervention rapide à domicile ou en
+          atelier.<br>Votre expert informatique de confiance.</p>
         <div class="hero-cta-group">
-          <a href="#contact" class="btn btn-primary btn-lg">
+          <a href="#contact" class="btn btn-primary btn-lg" data-i18n="hero-cta-rdv">
             <i class="fas fa-calendar-check"></i> Prendre RDV
           </a>
           <a href="https://wa.me/212699245542?text=Bonjour%2C%20je%20souhaite%20un%20diagnostic%20gratuit%20pour%20mon%20appareil."
-            class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+            class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener" data-i18n="hero-cta-wa">
             <i class="fab fa-whatsapp"></i> WhatsApp
           </a>
         </div>
         <div class="hero-stats">
           <div class="stat">
-            <span class="stat-number">5 ans</span>
-            <span class="stat-label">d'Expérience en France</span>
+            <span class="stat-number" data-i18n="hero-stat-exp">5 ans d'Expérience en France</span>
           </div>
           <div class="stat">
-            <span class="stat-number">50+</span>
-            <span class="stat-label">PC réparés en France</span>
+            <span class="stat-number" data-i18n="hero-stat-pc">50+ PC réparés en France</span>
           </div>
           <div class="stat">
-            <span class="stat-number">100%</span>
-            <span class="stat-label">Diagnostic gratuit</span>
+            <span class="stat-number" data-i18n="hero-stat-diag">100% Diagnostic gratuit</span>
           </div>
         </div>
       </div>
@@ -90,19 +96,19 @@
           <div class="hero-icon-grid">
             <div class="hero-icon-card">
               <i class="fas fa-laptop"></i>
-              <span>PC Portable</span>
+              <span data-i18n="hero-pc-portable">PC Portable</span>
             </div>
             <div class="hero-icon-card">
               <i class="fas fa-desktop"></i>
-              <span>PC Bureau</span>
+              <span data-i18n="hero-pc-bureau">PC Bureau</span>
             </div>
             <div class="hero-icon-card">
               <i class="fas fa-mobile-screen"></i>
-              <span>Smartphone</span>
+              <span data-i18n="hero-smartphone">Smartphone</span>
             </div>
             <div class="hero-icon-card">
               <i class="fas fa-gamepad"></i>
-              <span>PC Gaming</span>
+              <span data-i18n="hero-pc-gaming">PC Gaming</span>
             </div>
           </div>
         </div>
@@ -119,9 +125,10 @@
   <section class="section services-pc" id="services-pc">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-tag"><i class="fas fa-wrench"></i> Nos Expertises</span>
-        <h2>Services <span class="text-gradient">PC & Laptop</span></h2>
-        <p class="section-desc">Solutions complètes pour tous vos problèmes informatiques, du diagnostic à la
+        <span class="section-tag" data-i18n="services-pc-tag"><i class="fas fa-wrench"></i> Nos Expertises</span>
+        <h2 data-i18n="services-pc-title">Services <span class="text-gradient">PC & Laptop</span></h2>
+        <p class="section-desc" data-i18n="services-pc-desc">Solutions complètes pour tous vos problèmes informatiques,
+          du diagnostic à la
           réparation.</p>
       </div>
       <div class="services-grid">
@@ -129,85 +136,97 @@
           <div class="service-icon">
             <i class="fas fa-temperature-high"></i>
           </div>
-          <h3>Pâte Thermique CPU/GPU</h3>
-          <p>Changement de pâte thermique pour résoudre les problèmes de surchauffe, bruit ventilateur et performances
+          <h3 data-i18n="service-pate-title">Pâte Thermique CPU/GPU</h3>
+          <p data-i18n="service-pate-desc">Changement de pâte thermique pour résoudre les problèmes de surchauffe, bruit
+            ventilateur et performances
             réduites.</p>
           <ul class="service-features">
-            <li><i class="fas fa-check"></i> Nettoyage complet du système</li>
-            <li><i class="fas fa-check"></i> Pâte thermique haute qualité</li>
-            <li><i class="fas fa-check"></i> Test de température après</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-cleaning">Nettoyage complet du système</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-thermal-paste">Pâte thermique haute qualité</span>
+            </li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-temp-test">Test de température après</span></li>
           </ul>
         </div>
         <div class="service-card fade-in-up">
           <div class="service-icon">
             <i class="fas fa-screwdriver-wrench"></i>
           </div>
-          <h3>Montage PC Complet</h3>
-          <p>Assemblage sur mesure de votre PC bureautique ou gaming avec installation Windows, Linux ou macOS.</p>
+          <h3 data-i18n="service-montage-title">Montage PC Complet</h3>
+          <p data-i18n="service-montage-desc">Assemblage sur mesure de votre PC bureautique ou gaming avec installation
+            Windows, Linux ou macOS.</p>
           <ul class="service-features">
-            <li><i class="fas fa-check"></i> Conseil composants adaptés</li>
-            <li><i class="fas fa-check"></i> Montage soigné câble management</li>
-            <li><i class="fas fa-check"></i> Installation OS + pilotes</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-advice">Conseil composants adaptés</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-cable-mgmt">Montage soigné câble management</span>
+            </li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-os-install">Installation OS + pilotes</span></li>
           </ul>
         </div>
         <div class="service-card fade-in-up">
           <div class="service-icon">
             <i class="fas fa-bug"></i>
           </div>
-          <h3>Diagnostic Pannes</h3>
-          <p>Résolution des écrans noirs, écrans bleus (BSOD), lenteurs, plantages et redémarrages intempestifs.</p>
+          <h3 data-i18n="service-diag-title">Diagnostic Pannes</h3>
+          <p data-i18n="service-diag-desc">Résolution des écrans noirs, écrans bleus (BSOD), lenteurs, plantages et
+            redémarrages intempestifs.</p>
           <ul class="service-features">
-            <li><i class="fas fa-check"></i> Diagnostic gratuit complet</li>
-            <li><i class="fas fa-check"></i> Identification cause exacte</li>
-            <li><i class="fas fa-check"></i> Devis transparent</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-free-diag">Diagnostic gratuit complet</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-id-cause">Identification cause exacte</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-transparent-quote">Devis transparent</span></li>
           </ul>
         </div>
         <div class="service-card fade-in-up">
           <div class="service-icon">
             <i class="fas fa-rocket"></i>
           </div>
-          <h3>Upgrade & Optimisation</h3>
-          <p>Boostez votre PC avec des upgrades SSD, RAM et optimisation système pour gaming ou bureautique.</p>
+          <h3 data-i18n="service-upgrade-title">Upgrade & Optimisation</h3>
+          <p data-i18n="service-upgrade-desc">Boostez votre PC avec des upgrades SSD, RAM et optimisation système pour
+            gaming ou bureautique.</p>
           <ul class="service-features">
-            <li><i class="fas fa-check"></i> Upgrade RAM & SSD</li>
-            <li><i class="fas fa-check"></i> Optimisation Windows</li>
-            <li><i class="fas fa-check"></i> Configuration gaming</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-ram-ssd">Upgrade RAM & SSD</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-win-opt">Optimisation Windows</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-gaming-config">Configuration gaming</span></li>
           </ul>
         </div>
         <div class="service-card fade-in-up">
           <div class="service-icon">
             <i class="fas fa-plug"></i>
           </div>
-          <h3>Pilotes & Périphériques</h3>
-          <p>Installation et configuration de tous pilotes, imprimantes, scanners et périphériques connectés.</p>
+          <h3 data-i18n="service-peripherals-title">Pilotes & Périphériques</h3>
+          <p data-i18n="service-peripherals-desc">Installation et configuration de tous pilotes, imprimantes, scanners
+            et périphériques connectés.</p>
           <ul class="service-features">
-            <li><i class="fas fa-check"></i> Pilotes officiels à jour</li>
-            <li><i class="fas fa-check"></i> Configuration imprimante</li>
-            <li><i class="fas fa-check"></i> Résolution conflits</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-official-drivers">Pilotes officiels à jour</span>
+            </li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-printer-config">Configuration imprimante</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-conflict-res">Résolution conflits</span></li>
           </ul>
         </div>
         <div class="service-card fade-in-up">
           <div class="service-icon">
             <i class="fas fa-shield-virus"></i>
           </div>
-          <h3>Virus & Sécurité</h3>
-          <p>Suppression de virus, malwares, adwares et installation d'antivirus. Récupération de données.</p>
+          <h3 data-i18n="service-security-title">Virus & Sécurité</h3>
+          <p data-i18n="service-security-desc">Suppression de virus, malwares, adwares et installation d'antivirus.
+            Récupération de données.</p>
           <ul class="service-features">
-            <li><i class="fas fa-check"></i> Nettoyage virus complet</li>
-            <li><i class="fas fa-check"></i> Protection antivirus</li>
-            <li><i class="fas fa-check"></i> Sauvegarde données</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-virus-cleanup">Nettoyage virus complet</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-av-protection">Protection antivirus</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-data-backup">Sauvegarde données</span></li>
           </ul>
         </div>
         <div class="service-card service-card-wide fade-in-up">
           <div class="service-icon">
             <i class="fas fa-handshake"></i>
           </div>
-          <h3>Conseil & Accompagnement</h3>
-          <p>Conseils personnalisés pour l'achat, l'upgrade et la configuration de votre matériel informatique.</p>
+          <h3 data-i18n="service-advice-title">Conseil & Accompagnement</h3>
+          <p data-i18n="service-advice-desc">Conseils personnalisés pour l'achat, l'upgrade et la configuration de votre
+            matériel informatique.</p>
           <ul class="service-features">
-            <li><i class="fas fa-check"></i> Conseils achat et upgrade</li>
-            <li><i class="fas fa-check"></i> Configuration Gaming / Bureautique / Familial</li>
-            <li><i class="fas fa-check"></i> Assistance technique et formation</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-buy-advise">Conseils achat et upgrade</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-user-config">Configuration Gaming / Bureautique /
+                Familial</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="feat-training">Assistance technique et formation</span>
+            </li>
           </ul>
         </div>
       </div>
@@ -218,51 +237,54 @@
   <section class="section services-mobile" id="services-mobile">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-tag"><i class="fas fa-mobile-screen"></i> Mobile</span>
-        <h2>Services <span class="text-gradient">Téléphone</span></h2>
-        <p class="section-desc">Interventions software uniquement pour smartphone et tablette.</p>
+        <span class="section-tag" data-i18n="services-mobile-tag"><i class="fas fa-mobile-screen"></i> Mobile</span>
+        <h2 data-i18n="services-mobile-title">Services <span class="text-gradient">Téléphone</span></h2>
+        <p class="section-desc" data-i18n="services-mobile-desc">Interventions software uniquement pour smartphone et
+          tablette.</p>
       </div>
       <div class="mobile-services-wrapper">
         <div class="mobile-info-card fade-in-up">
           <div class="mobile-info-icon">
             <i class="fas fa-microchip"></i>
           </div>
-          <h3>Interventions Software</h3>
-          <p>Nous nous spécialisons dans les solutions logicielles pour vos appareils mobiles :</p>
-          <div class="mobile-services-list">
-            <div class="mobile-service-item">
+          <h3 data-i18n="service-sw-title">Interventions Software</h3>
+          <p data-i18n="service-sw-desc">Nous nous spécialisons dans les solutions logicielles pour vos appareils
+            mobiles :</p>
+          <div class="sw-grid">
+            <div class="sw-item">
               <i class="fas fa-rotate-right"></i>
               <div>
-                <h4>Reset & Réinitialisation</h4>
-                <p>Restauration d'usine, suppression sécurisée des données.</p>
+                <h4 data-i18n="sw-reset-title">Reset & Réinitialisation</h4>
+                <p data-i18n="sw-reset-desc">Restauration d'usine, suppression sécurisée des données.</p>
               </div>
             </div>
-            <div class="mobile-service-item">
+            <div class="sw-item">
               <i class="fas fa-unlock"></i>
               <div>
-                <h4>Déblocage Software</h4>
-                <p>Déblocage compte Google (FRP), codes PIN oubliés.</p>
+                <h4 data-i18n="sw-unlock-title">Déblocage Software</h4>
+                <p data-i18n="sw-unlock-desc">Déblocage compte Google (FRP), codes PIN oubliés.</p>
               </div>
             </div>
-            <div class="mobile-service-item">
+            <div class="sw-item">
               <i class="fas fa-gauge-high"></i>
               <div>
-                <h4>Optimisation & Nettoyage</h4>
-                <p>Accélération système, suppression bloatwares, optimisation batterie.</p>
+                <h4 data-i18n="sw-opt-title">Optimisation & Nettoyage</h4>
+                <p data-i18n="sw-opt-desc">Accélération système, suppression bloatwares, optimisation batterie.</p>
               </div>
             </div>
-            <div class="mobile-service-item">
+            <div class="sw-item">
               <i class="fas fa-download"></i>
               <div>
-                <h4>Flash & Mise à jour</h4>
-                <p>Installation firmware officiel, mise à jour système, flash ROM.</p>
+                <h4 data-i18n="sw-flash-title">Flash & Mise à jour</h4>
+                <p data-i18n="sw-flash-desc">Installation firmware officiel, mise à jour système, flash ROM.</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="mobile-note fade-in-up">
+        <div class="mobile-hw-note fade-in-up">
           <i class="fas fa-circle-info"></i>
-          <p><strong>Note :</strong> Nous ne proposons pas de réparations hardware mobile (écran, batterie, connecteur).
+          <p data-i18n="mobile-hw-note"><strong>Note :</strong> Nous ne proposons pas de réparations hardware mobile
+            (écran, batterie, connecteur).
             Nos interventions sont exclusivement software pour garantir la meilleure expertise possible.</p>
         </div>
       </div>
@@ -273,40 +295,46 @@
   <section class="section pourquoi" id="pourquoi">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-tag"><i class="fas fa-star"></i> Nos Engagements</span>
-        <h2>Pourquoi <span class="text-gradient">PC-MEKNES</span> ?</h2>
-        <p class="section-desc">Des avantages concrets qui font la différence pour vous.</p>
+        <span class="section-tag" data-i18n="why-tag"><i class="fas fa-star"></i> Nos Engagements</span>
+        <h2 data-i18n="why-title">Pourquoi <span class="text-gradient">PC-MEKNES</span> ?</h2>
+        <p class="section-desc" data-i18n="why-desc">Des avantages concrets qui font la différence pour vous.</p>
       </div>
       <div class="advantages-grid">
         <div class="advantage-card fade-in-up">
-          <div class="advantage-icon"><i class="fas fa-shield-halved"></i></div>
-          <h3>Fiabilité</h3>
-          <p>Diagnostic précis et solutions durables. Chaque intervention est faite avec soin et rigueur.</p>
+          <div class="advantage-icon"><i class="fas fa-shield-check"></i></div>
+          <h3 data-i18n="adv-fiability-title">Fiabilité</h3>
+          <p data-i18n="adv-fiability-desc">Diagnostic précis et solutions durables. Chaque intervention est faite avec
+            soin et rigueur.</p>
         </div>
         <div class="advantage-card fade-in-up">
           <div class="advantage-icon"><i class="fas fa-bolt"></i></div>
-          <h3>Rapidité</h3>
-          <p>Intervention rapide selon l'urgence. Prise de rendez-vous le jour même, réparation sous 24h.</p>
+          <h3 data-i18n="adv-speed-title">Rapidité</h3>
+          <p data-i18n="adv-speed-desc">Intervention rapide selon l'urgence. Prise de rendez-vous le jour même,
+            réparation sous 24h.</p>
         </div>
         <div class="advantage-card fade-in-up">
-          <div class="advantage-icon"><i class="fas fa-file-invoice"></i></div>
-          <h3>Transparence</h3>
-          <p>Devis clair avant toute intervention. Pas de surprise, vous validez avant qu'on commence.</p>
+          <div class="advantage-icon"><i class="fas fa-eye"></i></div>
+          <h3 data-i18n="adv-transparency-title">Transparence</h3>
+          <p data-i18n="adv-transparency-desc">Devis clair avant toute intervention. Pas de surprise, vous validez avant
+            qu'on commence.</p>
         </div>
         <div class="advantage-card fade-in-up">
           <div class="advantage-icon"><i class="fas fa-location-dot"></i></div>
-          <h3>Proximité</h3>
-          <p>Basé à Meknès, Bassatine. Interventions à domicile possibles dans toute la ville.</p>
+          <h3 data-i18n="adv-proximity-title">Proximité</h3>
+          <p data-i18n="adv-proximity-desc">Basé à Meknès, Bassatine. Interventions à domicile possibles dans toute la
+            ville.</p>
         </div>
         <div class="advantage-card fade-in-up">
-          <div class="advantage-icon"><i class="fas fa-stethoscope"></i></div>
-          <h3>Diagnostic Gratuit</h3>
-          <p>Diagnostic complet offert. Vous ne payez que si vous acceptez la réparation.</p>
+          <div class="advantage-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3 data-i18n="adv-free-diag-title">Diagnostic Gratuit</h3>
+          <p data-i18n="adv-free-diag-desc">Diagnostic complet offert. Vous ne payez que si vous acceptez la réparation.
+          </p>
         </div>
         <div class="advantage-card fade-in-up">
           <div class="advantage-icon"><i class="fas fa-id-card"></i></div>
-          <h3>Auto-Entrepreneur</h3>
-          <p>Professionnel inscrit. Facture légale et service de confiance garanti.</p>
+          <h3 data-i18n="adv-professional-title">Auto-Entrepreneur</h3>
+          <p data-i18n="adv-professional-desc">Professionnel inscrit. Facture légale et service de confiance garanti.
+          </p>
         </div>
       </div>
     </div>
@@ -316,9 +344,10 @@
   <section class="section tarifs" id="tarifs">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-tag"><i class="fas fa-tags"></i> Nos Tarifs</span>
-        <h2>Prix <span class="text-gradient">Transparents</span></h2>
-        <p class="section-desc">Des tarifs clairs et compétitifs. Diagnostic toujours gratuit, vous ne payez que la
+        <span class="section-tag" data-i18n="tarifs-tag"><i class="fas fa-tags"></i> Nos Tarifs</span>
+        <h2 data-i18n="tarifs-title">Prix <span class="text-gradient">Transparents</span></h2>
+        <p class="section-desc" data-i18n="tarifs-desc">Des tarifs clairs et compétitifs. Diagnostic toujours gratuit,
+          vous ne payez que la
           réparation.</p>
       </div>
       <div class="pricing-grid">
@@ -326,92 +355,105 @@
         <div class="pricing-card fade-in-up">
           <div class="pricing-header">
             <div class="pricing-icon"><i class="fas fa-stethoscope"></i></div>
-            <h3>Diagnostic</h3>
-            <div class="pricing-price">
-              <span class="price-amount">GRATUIT</span>
-            </div>
+            <h3 data-i18n="price-diag-title">Diagnostic</h3>
+          </div>
+          <div class="pricing-price">
+            <span class="price-amount" data-i18n="price-diag-amount">GRATUIT</span>
           </div>
           <ul class="pricing-features">
-            <li><i class="fas fa-check"></i> Diagnostic complet PC/Mobile</li>
-            <li><i class="fas fa-check"></i> Identification du problème</li>
-            <li><i class="fas fa-check"></i> Devis détaillé offert</li>
-            <li><i class="fas fa-check"></i> Conseil personnalisé</li>
-            <li><i class="fas fa-check"></i> Sans engagement</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-diag-feat1">Diagnostic complet PC/Mobile</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-diag-feat2">Identification du problème</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-diag-feat3">Devis détaillé offert</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-diag-feat4">Conseil personnalisé</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-diag-feat5">Sans engagement</span></li>
           </ul>
-          <a href="#contact" class="btn btn-outline btn-block">Demander un diagnostic</a>
+          <a href="#contact" class="btn btn-outline btn-full" data-i18n="price-btn-diag">Demander un diagnostic</a>
         </div>
         <!-- Maintenance -->
-        <div class="pricing-card pricing-popular fade-in-up">
-          <div class="pricing-badge">Le + demandé</div>
+        <div class="pricing-card featured fade-in-up">
+          <div class="pricing-badge" data-i18n="price-maintenance-badge">Le + demandé</div>
           <div class="pricing-header">
             <div class="pricing-icon"><i class="fas fa-temperature-high"></i></div>
-            <h3>Maintenance PC</h3>
-            <div class="pricing-price">
-              <span class="price-from">à partir de</span>
-              <span class="price-amount">100 <small>DH</small></span>
-            </div>
+            <h3 data-i18n="price-maintenance-title">Maintenance PC</h3>
+          </div>
+          <div class="pricing-price">
+            <span class="price-from" data-i18n="price-maintenance-from">à partir de</span>
+            <span class="price-amount" data-i18n="price-maintenance-amount">100 <small>DH</small></span>
           </div>
           <ul class="pricing-features">
-            <li><i class="fas fa-check"></i> Nettoyage interne complet</li>
-            <li><i class="fas fa-check"></i> Changement pâte thermique</li>
-            <li><i class="fas fa-check"></i> Optimisation Windows</li>
-            <li><i class="fas fa-check"></i> Suppression virus/malwares</li>
-            <li><i class="fas fa-check"></i> Installation pilotes</li>
-            <li><i class="fas fa-check"></i> Test performance après</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-maintenance-feat1">Nettoyage interne complet</span>
+            </li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-maintenance-feat2">Changement pâte thermique</span>
+            </li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-maintenance-feat3">Optimisation Windows</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-maintenance-feat4">Suppression virus/malwares</span>
+            </li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-maintenance-feat5">Installation pilotes</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-maintenance-feat6">Test performance après</span>
+            </li>
           </ul>
-          <a href="#contact" class="btn btn-primary btn-block">Prendre RDV</a>
+          <a href="#contact" class="btn btn-primary btn-full" data-i18n="price-btn-rdv">Prendre RDV</a>
         </div>
         <!-- Montage PC -->
         <div class="pricing-card fade-in-up">
           <div class="pricing-header">
             <div class="pricing-icon"><i class="fas fa-screwdriver-wrench"></i></div>
-            <h3>Montage PC</h3>
-            <div class="pricing-price">
-              <span class="price-from">à partir de</span>
-              <span class="price-amount">200 <small>DH</small></span>
-            </div>
+            <h3 data-i18n="price-montage-title">Montage PC</h3>
+          </div>
+          <div class="pricing-price">
+            <span class="price-from" data-i18n="price-montage-from">à partir de</span>
+            <span class="price-amount" data-i18n="price-montage-amount">200 <small>DH</small></span>
           </div>
           <ul class="pricing-features">
-            <li><i class="fas fa-check"></i> Assemblage complet</li>
-            <li><i class="fas fa-check"></i> Câble management soigné</li>
-            <li><i class="fas fa-check"></i> Installation Windows/Linux</li>
-            <li><i class="fas fa-check"></i> Pilotes + logiciels essentiels</li>
-            <li><i class="fas fa-check"></i> Test stabilité 24h</li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-montage-feat1">Assemblage complet</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-montage-feat2">Câble management soigné</span></li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-montage-feat3">Installation Windows/Linux</span>
+            </li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-montage-feat4">Pilotes + logiciels essentiels</span>
+            </li>
+            <li><i class="fas fa-check"></i> <span data-i18n="price-montage-feat5">Test stabilité 24h</span></li>
           </ul>
-          <a href="#contact" class="btn btn-outline btn-block">Demander un devis</a>
+          <a href="#contact" class="btn btn-outline btn-full" data-i18n="price-btn-quote">Demander un devis</a>
         </div>
       </div>
       <!-- Additional pricing items -->
-      <div class="pricing-extras fade-in-up">
-        <h3><i class="fas fa-list-check"></i> Autres interventions</h3>
-        <div class="extras-grid">
+      <div class="pricing-extra fade-in-up">
+        <h3 data-i18n="price-others-title"><i class="fas fa-list-check"></i> Autres interventions</h3>
+        <div class="extra-grid">
           <div class="extra-item">
-            <span class="extra-name"><i class="fas fa-hard-drive"></i> Upgrade SSD / RAM</span>
-            <span class="extra-price">à partir de 80 DH <small>(+ pièce)</small></span>
+            <span class="extra-name"><i class="fas fa-hard-drive"></i> <span class="extra-label"
+                data-i18n="extra-ssd-ram">Upgrade SSD / RAM</span></span>
+            <span class="extra-price" data-i18n="extra-ssd-ram-price">à partir de 80 DH <small>(+ pièce)</small></span>
           </div>
           <div class="extra-item">
-            <span class="extra-name"><i class="fas fa-rotate-right"></i> Installation Windows</span>
-            <span class="extra-price">à partir de 100 DH</span>
+            <span class="extra-name"><i class="fas fa-rotate-right"></i> <span class="extra-label"
+                data-i18n="extra-windows">Installation Windows</span></span>
+            <span class="extra-price" data-i18n="extra-windows-price">à partir de 100 DH</span>
           </div>
           <div class="extra-item">
-            <span class="extra-name"><i class="fas fa-unlock"></i> Déblocage FRP Mobile</span>
-            <span class="extra-price">à partir de 50 DH</span>
+            <span class="extra-name"><i class="fas fa-unlock"></i> <span class="extra-label"
+                data-i18n="extra-frp">Déblocage FRP Mobile</span></span>
+            <span class="extra-price" data-i18n="extra-frp-price">à partir de 50 DH</span>
           </div>
           <div class="extra-item">
-            <span class="extra-name"><i class="fas fa-download"></i> Flash Firmware Mobile</span>
-            <span class="extra-price">à partir de 50 DH</span>
+            <span class="extra-name"><i class="fas fa-download"></i> <span class="extra-label"
+                data-i18n="extra-flash">Flash Firmware Mobile</span></span>
+            <span class="extra-price" data-i18n="extra-flash-price">à partir de 50 DH</span>
           </div>
           <div class="extra-item">
-            <span class="extra-name"><i class="fas fa-shield-virus"></i> Nettoyage Virus Complet</span>
-            <span class="extra-price">à partir de 80 DH</span>
+            <span class="extra-name"><i class="fas fa-shield-virus"></i> <span class="extra-label"
+                data-i18n="extra-virus">Nettoyage Virus Complet</span></span>
+            <span class="extra-price" data-i18n="extra-virus-price">à partir de 80 DH</span>
           </div>
           <div class="extra-item">
-            <span class="extra-name"><i class="fas fa-house-signal"></i> Intervention à domicile</span>
-            <span class="extra-price">+50 DH (Meknès)</span>
+            <span class="extra-name"><i class="fas fa-house-signal"></i> <span class="extra-label"
+                data-i18n="extra-home">Intervention à domicile</span></span>
+            <span class="extra-price" data-i18n="extra-home-price">+50 DH (Meknès)</span>
           </div>
         </div>
-        <p class="pricing-note"><i class="fas fa-circle-info"></i> Les prix sont indicatifs et peuvent varier selon la
-          complexité. Devis gratuit et sans engagement avant toute intervention.</p>
+        <p class="pricing-note"><i class="fas fa-circle-info"></i> <span data-i18n="pricing-note">Les prix sont
+            indicatifs et peuvent varier selon la
+            complexité. Devis gratuit et sans engagement avant toute intervention.</span></p>
       </div>
     </div>
   </section>
@@ -420,29 +462,29 @@
   <section class="section parcours" id="parcours">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-tag"><i class="fas fa-graduation-cap"></i> Mon Parcours</span>
-        <h2>Expertise <span class="text-gradient">France & Maroc</span></h2>
-        <p class="section-desc">Une expertise technique forgée par des années d'expérience en Europe, maintenant à votre
-          service à Meknès.</p>
+        <span class="section-tag" data-i18n="parcours-tag"><i class="fas fa-graduation-cap"></i> Mon Parcours</span>
+        <h2 data-i18n="parcours-title">Expertise <span class="text-gradient">France & Maroc</span></h2>
+        <p class="section-desc" data-i18n="parcours-desc">Une expertise technique forgée par des années d'expérience en
+          Europe, maintenant à votre service à Meknès.</p>
       </div>
       <div class="parcours-wrapper fade-in-up">
         <div class="parcours-content">
           <div class="parcours-item">
             <div class="parcours-icon"><i class="fas fa-plane-arrival"></i></div>
             <div class="parcours-text">
-              <h3>5 Ans d'Expérience en France</h3>
-              <p>Avant mon installation à Meknès cette année, j'ai exercé pendant 5 ans en tant que technicien
-                informatique en France. Cette expérience m'a permis de maîtriser les technologies les plus récentes et
-                d'acquérir une rigueur professionnelle et une exigence de qualité élevées.</p>
+              <h3 data-i18n="parcours-item1-title">5 Ans d'Expérience en France</h3>
+              <p data-i18n="parcours-item1-desc">Avant mon installation à Meknès cette année, j'ai exercé pendant 5 ans
+                en tant que technicien informatique en France. Cette expérience m'a permis de maîtriser les technologies
+                les plus récentes et d'acquérir une rigueur professionnelle et une exigence de qualité élevées.</p>
             </div>
           </div>
           <div class="parcours-item">
             <div class="parcours-icon"><i class="fas fa-shop"></i></div>
             <div class="parcours-text">
-              <h3>Installation à Meknès - Bassatine</h3>
-              <p>Désormais établi à Bassatine, je mets ce savoir-faire au service des particuliers et des professionnels
-                de Meknès. Mon objectif est d'offrir un service de proximité alliant expertise européenne et tarifs
-                locaux abordables.</p>
+              <h3 data-i18n="parcours-item2-title">Installation à Meknès - Bassatine</h3>
+              <p data-i18n="parcours-item2-desc">Désormais établi à Bassatine, je mets ce savoir-faire au service des
+                particuliers et des professionnels de Meknès. Mon objectif est d'offrir un service de proximité alliant
+                expertise européenne et tarifs locaux abordables.</p>
             </div>
           </div>
         </div>
@@ -454,94 +496,99 @@
   <section class="section contact" id="contact">
     <div class="container">
       <div class="section-header fade-in">
-        <span class="section-tag"><i class="fas fa-envelope"></i> Contact</span>
-        <h2>Contactez <span class="text-gradient">PC-MEKNES</span></h2>
-        <p class="section-desc">Diagnostic gratuit ! Décrivez votre problème et on vous rappelle.</p>
+        <span class="section-tag" data-i18n="contact-tag"><i class="fas fa-envelope"></i> Contact</span>
+        <h2 data-i18n="contact-title">Contactez <span class="text-gradient">PC-MEKNES</span></h2>
+        <p class="section-desc" data-i18n="contact-desc">Diagnostic gratuit ! Décrivez votre problème et on vous
+          rappelle.</p>
       </div>
       <div class="contact-wrapper">
         <div class="contact-form-wrapper fade-in-up">
           <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <label for="name"><i class="fas fa-user"></i> Nom complet</label>
-              <input type="text" id="name" name="name" placeholder="Votre nom" required>
-            </div>
-            <div class="form-row">
+            <div class="form-grid">
               <div class="form-group">
-                <label for="phone"><i class="fas fa-phone"></i> Téléphone</label>
-                <input type="tel" id="phone" name="phone" placeholder="06XX XX XX XX" required>
+                <label for="name" data-i18n="form-name"><i class="fas fa-user"></i> Nom complet</label>
+                <input type="text" id="name" name="name" data-i18n="form-name-ph" placeholder="Votre nom" required>
               </div>
               <div class="form-group">
-                <label for="email"><i class="fas fa-envelope"></i> Email (optionnel)</label>
-                <input type="email" id="email" name="email" placeholder="votre@email.com">
+                <label for="phone" data-i18n="form-phone"><i class="fas fa-phone"></i> Téléphone</label>
+                <input type="tel" id="phone" name="phone" data-i18n="form-phone-ph" placeholder="06XX XX XX XX"
+                  required>
               </div>
             </div>
             <div class="form-group">
-              <label for="device"><i class="fas fa-laptop"></i> Type d'appareil</label>
+              <label for="email" data-i18n="form-email"><i class="fas fa-envelope"></i> Email (optionnel)</label>
+              <input type="email" id="email" name="email" data-i18n="form-email-ph" placeholder="votre@email.com">
+            </div>
+            <div class="form-group">
+              <label for="device" data-i18n="form-device"><i class="fas fa-laptop"></i> Type d'appareil</label>
               <select id="device" name="device" required>
-                <option value="" disabled selected>Choisir...</option>
-                <option value="pc-portable">PC Portable</option>
-                <option value="pc-bureau">PC Bureau</option>
-                <option value="smartphone">Smartphone</option>
-                <option value="tablette">Tablette</option>
-                <option value="autre">Autre</option>
+                <option value="" disabled selected data-i18n="form-device-ph">Choisir...</option>
+                <option value="pc-portable" data-i18n="form-device-opt1">PC Portable</option>
+                <option value="pc-bureau" data-i18n="form-device-opt2">PC Bureau</option>
+                <option value="smartphone" data-i18n="form-device-opt3">Smartphone</option>
+                <option value="tablette" data-i18n="form-device-opt4">Tablette</option>
+                <option value="autre" data-i18n="form-device-opt5">Autre</option>
               </select>
             </div>
             <div class="form-group">
-              <label for="message"><i class="fas fa-message"></i> Décrivez votre problème</label>
-              <textarea id="message" name="message" rows="4"
+              <label for="message" data-i18n="form-message"><i class="fas fa-message"></i> Décrivez votre
+                problème</label>
+              <textarea id="message" name="message" rows="4" data-i18n="form-message-ph"
                 placeholder="Ex: Mon PC surchauffe et s'éteint tout seul..." required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary btn-block">
+            <button type="submit" class="btn btn-primary btn-full shadow-lg" data-i18n="form-btn-send">
               <i class="fas fa-paper-plane"></i> Envoyer la demande
             </button>
           </form>
           <div class="form-success" id="formSuccess" style="display:none;">
-            <i class="fas fa-circle-check"></i>
-            <h3>Message envoyé !</h3>
-            <p>Merci pour votre demande. Nous vous contacterons dans les plus brefs délais.</p>
+            <div class="success-icon"><i class="fas fa-check-circle"></i></div>
+            <h3 data-i18n="form-success-title">Message envoyé !</h3>
+            <p data-i18n="form-success-desc">Merci pour votre demande. Nous vous contacterons dans les plus brefs
+              délais.</p>
           </div>
         </div>
         <div class="contact-info fade-in-up">
-          <div class="contact-info-card">
-            <h3><i class="fas fa-headset"></i> Informations</h3>
-            <div class="contact-detail">
-              <i class="fas fa-user-tie"></i>
-              <div>
+          <div class="info-card">
+            <h3 data-i18n="contact-info-title"><i class="fas fa-headset"></i> Informations</h3>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-user-tie"></i></div>
+              <div class="info-text">
                 <strong>Abderrahman Elmalki</strong>
-                <p>Technicien informatique</p>
+                <p data-i18n="contact-role">Technicien informatique</p>
               </div>
             </div>
-            <div class="contact-detail">
-              <i class="fas fa-location-dot"></i>
-              <div>
-                <strong>Adresse</strong>
-                <p>Zone C, Bloc F, Bassatine<br>Meknès, Maroc</p>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+              <div class="info-text">
+                <strong data-i18n="contact-addr-title">Adresse</strong>
+                <p data-i18n="contact-addr-val">Zone C, Bloc F, Bassatine<br>Meknès, Maroc</p>
               </div>
             </div>
-            <div class="contact-detail">
-              <i class="fas fa-phone"></i>
-              <div>
-                <strong>Téléphone</strong>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-phone"></i></div>
+              <div class="info-text">
+                <strong data-i18n="contact-phone-title">Téléphone</strong>
                 <p><a href="tel:+212699245542">+212 699 245 542</a></p>
               </div>
             </div>
-            <div class="contact-detail">
-              <i class="fab fa-whatsapp"></i>
-              <div>
-                <strong>WhatsApp</strong>
-                <p><a href="https://wa.me/212699245542" target="_blank" rel="noopener">Envoyer un message</a></p>
+            <div class="info-item">
+              <div class="info-icon"><i class="fab fa-whatsapp"></i></div>
+              <div class="info-text">
+                <strong data-i18n="contact-wa-title">WhatsApp</strong>
+                <p><a href="https://wa.me/212699245542" target="_blank" rel="noopener"
+                    data-i18n="contact-wa-link">Envoyer un message</a></p>
               </div>
             </div>
-            <div class="contact-detail">
-              <i class="fas fa-clock"></i>
-              <div>
-                <strong>Horaires</strong>
-                <p>Lun - Sam : 9h00 - 20h00<br>Dim : Sur RDV</p>
+            <div class="info-item">
+              <div class="info-icon"><i class="fas fa-clock"></i></div>
+              <div class="info-text">
+                <strong data-i18n="contact-hours-title">Horaires</strong>
+                <p data-i18n="contact-hours-val">Lun - Sam : 9h00 - 20h00<br>Dim : Sur RDV</p>
               </div>
             </div>
           </div>
           <a href="https://wa.me/212699245542?text=Bonjour%2C%20je%20souhaite%20un%20diagnostic%20gratuit."
-            class="btn btn-whatsapp btn-block" target="_blank" rel="noopener">
+            class="btn btn-whatsapp btn-full" target="_blank" rel="noopener" data-i18n="contact-wa-btn">
             <i class="fab fa-whatsapp"></i> Contacter via WhatsApp
           </a>
           <!-- Google Maps -->
@@ -568,9 +615,10 @@
               alt="PC-MEKNES Logo">
             <span>PC-<strong>MEKNES</strong></span>
           </a>
-          <p>Votre expert en réparation PC et mobile à Meknès. Diagnostic gratuit, prix abordables et service garanti.
+          <p data-i18n="footer-tagline">Votre expert en réparation PC et mobile à Meknès. Diagnostic gratuit, prix
+            abordables et service garanti.
           </p>
-          <div class="footer-social">
+          <div class="social-links">
             <a href="https://wa.me/212699245542" target="_blank" rel="noopener" aria-label="WhatsApp"><i
                 class="fab fa-whatsapp"></i></a>
             <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
@@ -578,35 +626,36 @@
           </div>
         </div>
         <div class="footer-links">
-          <h4>Services PC</h4>
+          <h4 data-i18n="footer-links-pc">Services PC</h4>
           <ul>
-            <li><a href="#services-pc">Pâte thermique</a></li>
-            <li><a href="#services-pc">Montage PC</a></li>
-            <li><a href="#services-pc">Diagnostic pannes</a></li>
-            <li><a href="#services-pc">Upgrade & Optimisation</a></li>
+            <li><a href="#services-pc" data-i18n="footer-pate">Pâte thermique</a></li>
+            <li><a href="#services-pc" data-i18n="footer-montage">Montage PC</a></li>
+            <li><a href="#services-pc" data-i18n="footer-diag">Diagnostic pannes</a></li>
+            <li><a href="#services-pc" data-i18n="footer-upgrade">Upgrade & Optimisation</a></li>
           </ul>
         </div>
         <div class="footer-links">
-          <h4>Services Mobile</h4>
+          <h4 data-i18n="footer-links-mobile">Services Mobile</h4>
           <ul>
-            <li><a href="#services-mobile">Reset & Réinitialisation</a></li>
-            <li><a href="#services-mobile">Déblocage</a></li>
-            <li><a href="#services-mobile">Optimisation</a></li>
-            <li><a href="#services-mobile">Flash firmware</a></li>
+            <li><a href="#services-mobile" data-i18n="footer-reset">Reset & Réinitialisation</a></li>
+            <li><a href="#services-mobile" data-i18n="footer-unlock">Déblocage</a></li>
+            <li><a href="#services-mobile" data-i18n="footer-opt">Optimisation</a></li>
+            <li><a href="#services-mobile" data-i18n="footer-flash">Flash firmware</a></li>
           </ul>
         </div>
         <div class="footer-links">
-          <h4>Informations</h4>
+          <h4 data-i18n="footer-links-info">Informations</h4>
           <ul>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#pourquoi">Nos engagements</a></li>
-            <li><a href="#parcours">Notre parcours</a></li>
-            <li><a href="#">Mentions légales</a></li>
+            <li><a href="#contact" data-i18n="footer-link-contact">Contact</a></li>
+            <li><a href="#pourquoi" data-i18n="footer-link-commit">Nos engagements</a></li>
+            <li><a href="#parcours" data-i18n="footer-link-parcours">Notre parcours</a></li>
+            <li><a href="#" data-i18n="footer-link-legal">Mentions légales</a></li>
           </ul>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 PC-MEKNES - Abderrahman Elmalki. Inscrit au Registre National des Auto-Entrepreneurs :
+        <p data-i18n="footer-copyright">&copy; 2025 PC-MEKNES - Abderrahman Elmalki. Inscrit au Registre National des
+          Auto-Entrepreneurs :
           003405900000095. Tous droits réservés.</p>
       </div>
     </div>
@@ -624,6 +673,7 @@
   </button>
 
   <script src="js/main.js"></script>
+  <script type="module" src="js/i18n.js"></script>
 </body>
 
 </html>
