@@ -1,0 +1,135 @@
+mutation CreateDemoData @transaction @auth(level: USER, insecureReason: "This is seed data and should only be run by administrators.") {
+  user_insertMany(data: [
+    {
+      id: "00000000-0000-0000-0000-000000000001",
+      createdAt: "2023-01-01T10:00:00Z",
+      displayName: "Alice Smith",
+      email: "alice.smith@example.com",
+      photoUrl: "https://example.com/alice.jpg"
+    },
+    {
+      id: "00000000-0000-0000-0000-000000000002",
+      createdAt: "2023-01-02T11:00:00Z",
+      displayName: "Bob Johnson",
+      email: "bob.johnson@example.com",
+      photoUrl: "https://example.com/bob.jpg"
+    },
+    {
+      id: "00000000-0000-0000-0000-000000000003",
+      createdAt: "2023-01-03T12:00:00Z",
+      displayName: "Charlie Brown",
+      email: "charlie.brown@example.com",
+      photoUrl: "https://example.com/charlie.jpg"
+    }
+  ])
+  componentType_insertMany(data: [
+    {
+      id: "10000000-0000-0000-0000-000000000001",
+      name: "CPU"
+    },
+    {
+      id: "10000000-0000-0000-0000-000000000002",
+      name: "GPU"
+    },
+    {
+      id: "10000000-0000-0000-0000-000000000003",
+      name: "Motherboard"
+    },
+    {
+      id: "10000000-0000-0000-0000-000000000004",
+      name: "RAM"
+    },
+    {
+      id: "10000000-0000-0000-0000-000000000005",
+      name: "Storage"
+    }
+  ])
+  component_insertMany(data: [
+    {
+      id: "20000000-0000-0000-0000-000000000001",
+      typeId: "10000000-0000-0000-0000-000000000001",
+      createdAt: "2023-01-04T13:00:00Z",
+      imageUrl: "https://example.com/cpu1.jpg",
+      manufacturer: "Intel",
+      modelNumber: "i9-13900K",
+      name: "Intel Core i9-13900K",
+      price: 599.99,
+      specifications: "24 Cores, 32 Threads, 5.8 GHz Max Turbo Frequency"
+    },
+    {
+      id: "20000000-0000-0000-0000-000000000002",
+      typeId: "10000000-0000-0000-0000-000000000001",
+      createdAt: "2023-01-05T14:00:00Z",
+      imageUrl: "https://example.com/cpu2.jpg",
+      manufacturer: "AMD",
+      modelNumber: "Ryzen 9 7950X3D",
+      name: "AMD Ryzen 9 7950X3D",
+      price: 699.99,
+      specifications: "16 Cores, 32 Threads, 5.7 GHz Max Boost Clock"
+    },
+    {
+      id: "20000000-0000-0000-0000-000000000003",
+      typeId: "10000000-0000-0000-0000-000000000002",
+      createdAt: "2023-01-06T15:00:00Z",
+      imageUrl: "https://example.com/gpu1.jpg",
+      manufacturer: "NVIDIA",
+      modelNumber: "RTX 4090",
+      name: "NVIDIA GeForce RTX 4090",
+      price: 1599.99,
+      specifications: "24GB GDDR6X, Ada Lovelace Architecture"
+    },
+    {
+      id: "20000000-0000-0000-0000-000000000004",
+      typeId: "10000000-0000-0000-0000-000000000002",
+      createdAt: "2023-01-07T16:00:00Z",
+      imageUrl: "https://example.com/gpu2.jpg",
+      manufacturer: "AMD",
+      modelNumber: "RX 7900 XTX",
+      name: "AMD Radeon RX 7900 XTX",
+      price: 999.99,
+      specifications: "24GB GDDR6, RDNA 3 Architecture"
+    }
+  ])
+  build_insertMany(data: [
+    {
+      id: "30000000-0000-0000-0000-000000000001",
+      userId: "00000000-0000-0000-0000-000000000001",
+      createdAt: "2023-02-01T09:00:00Z",
+      description: "My ultimate gaming rig for 4K adventures.",
+      isPublic: true,
+      name: "Gaming Beast v1",
+      updatedAt: "2023-02-01T09:00:00Z"
+    },
+    {
+      id: "30000000-0000-0000-0000-000000000002",
+      userId: "00000000-0000-0000-0000-000000000002",
+      createdAt: "2023-02-05T10:30:00Z",
+      description: "Workstation for video editing and content creation.",
+      isPublic: false,
+      name: "Creator's Dream",
+      updatedAt: "2023-02-05T10:30:00Z"
+    }
+  ])
+  buildComponent_insertMany(data: [
+    {
+      buildId: "30000000-0000-0000-0000-000000000001",
+      componentId: "20000000-0000-0000-0000-000000000001",
+      quantity: 1
+    },
+    {
+      buildId: "30000000-0000-0000-0000-000000000001",
+      componentId: "20000000-0000-0000-0000-000000000003",
+      quantity: 1
+    },
+    {
+      buildId: "30000000-0000-0000-0000-000000000002",
+      componentId: "20000000-0000-0000-0000-000000000002",
+      quantity: 1
+    },
+    {
+      buildId: "30000000-0000-0000-0000-000000000002",
+      componentId: "20000000-0000-0000-0000-000000000004",
+      quantity: 1
+    }
+  ])
+}

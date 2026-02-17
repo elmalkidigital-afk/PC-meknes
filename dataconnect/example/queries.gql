@@ -1,0 +1,36 @@
+query ListAllComponentTypes @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public as it only lists general component types.") {
+  componentTypes {
+    id
+    name
+  }
+}
+
+query MyPublicBuilds @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public as it only lists builds explicitly marked as public.") {
+  builds(where: {isPublic: {eq: true}}) {
+    id
+    name
+    description
+    user {
+      displayName
+    }
+  }
+}
+
+mutation CreateNewUserBuild($name: String!, $description: String, $isPublic: Boolean!) @auth(level: USER) {
+  build_insert(data: {
+    userId_expr: "auth.uid",
+    name: $name,
+    description: $description,
+    isPublic: $isPublic,
+    createdAt_expr: "request.time",
+    updatedAt_expr: "request.time"
+  })
+}
+
+mutation AddComponentToBuild($buildId: UUID!, $componentId: UUID!, $quantity: Int!) @auth(level: USER) {
+  buildComponent_insert(data: {
+    buildId: $buildId,
+    componentId: $componentId,
+    quantity: $quantity
+  })
+}

@@ -6,5 +6,8 @@
     "build": "echo 'Static site - no build needed'",
     "start": "npx serve public -l 3000"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@dataconnect/generated": "file:src/dataconnect-generated"
+  }
 }

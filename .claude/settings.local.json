@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:unsplash.com)",
+      "Bash(where:*)",
+      "Bash(npx --yes serve:*)",
+      "WebFetch(domain:web-linecreation.fr)",
+      "Bash(git remote add:*)",
+      "Bash(git fetch:*)",
+      "Bash(del \"D:\\\\PC-MEKNES\\\\nul\")",
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}

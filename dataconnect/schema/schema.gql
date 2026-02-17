@@ -1,0 +1,36 @@
+type User @table {
+  displayName: String!
+  email: String
+  photoUrl: String
+  createdAt: Timestamp!
+}
+
+type ComponentType @table {
+  name: String!
+}
+
+type Component @table {
+  name: String!
+  type: ComponentType!
+  price: Float!
+  manufacturer: String
+  modelNumber: String
+  specifications: String # JSON string for flexible specs
+  imageUrl: String
+  createdAt: Timestamp!
+}
+
+type Build @table {
+  name: String!
+  user: User!
+  isPublic: Boolean!
+  description: String
+  createdAt: Timestamp!
+  updatedAt: Timestamp!
+}
+
+type BuildComponent @table(key: ["build", "component"]) {
+  build: Build!
+  component: Component!
+  quantity: Int
+}
