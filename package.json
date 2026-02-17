@@ -1,0 +1,10 @@
+{
+  "name": "pc-meknes",
+  "version": "1.0.0",
+  "description": "Landing page PC-MEKNES - Réparation PC & Mobile à Meknès",
+  "scripts": {
+    "build": "echo 'Static site - no build needed'",
+    "start": "npx serve public -l 3000"
+  },
+  "private": true
+}
