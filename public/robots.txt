@@ -1,0 +1,37 @@
+# PC-MEKNES Robots File
+# SEO Optimized for Google, Bing, and other search engines
+
+# Allow all crawlers
+User-agent: *
+Allow: /
+Disallow: /node_modules/
+Disallow: /src/
+Disallow: /.firebase/
+Disallow: /.git/
+
+# Specific rules for Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Specific rules for Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap location
+Sitemap: https://pc-meknes.fr/sitemap.xml
+
+# Crawl delay for other bots
+Crawl-delay: 1
+Request-rate: 1/10s

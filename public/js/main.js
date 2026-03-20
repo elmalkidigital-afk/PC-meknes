@@ -169,7 +169,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // --- Counter animation for hero stats ---
   function animateCounter(el, target, suffix = '') {
     let current = 0;
-    const increment = target / 40;
+    const increment = Math.max(target / 40, 1);
     const timer = setInterval(() => {
       current += increment;
       if (current >= target) {
@@ -180,28 +180,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 30);
   }
 
-  const statsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const statNumbers = entry.target.querySelectorAll('.stat-number');
-        statNumbers.forEach(stat => {
-          const text = stat.textContent;
-          if (text.includes('+')) {
-            animateCounter(stat, parseInt(text), '+');
-          } else if (text.includes('h')) {
-            animateCounter(stat, parseInt(text), 'h');
-          } else if (text.includes('%')) {
-            animateCounter(stat, parseInt(text), '%');
-          }
-        });
-        statsObserver.unobserve(entry.target);
+  function startCounters() {
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(stat => {
+      if (stat.dataset.counted) return; // Don't re-count
+      const text = stat.textContent.trim();
+      const num = parseInt(text);
+      if (isNaN(num)) return;
+
+      let suffix = '';
+      if (text.includes('+')) suffix = '+';
+      else if (text.includes('h')) suffix = 'h';
+      else if (text.includes('%')) suffix = '%';
+
+      if (suffix || num > 0) {
+        stat.dataset.counted = 'true';
+        animateCounter(stat, num, suffix);
       }
     });
-  }, { threshold: 0.5 });
+  }
 
+  // Start counters immediately since hero stats are visible on page load
   const heroStats = document.querySelector('.hero-stats');
   if (heroStats) {
-    statsObserver.observe(heroStats);
+    // Small delay to ensure DOM is fully rendered
+    setTimeout(startCounters, 300);
   }
 
 });

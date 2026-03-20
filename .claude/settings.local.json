@@ -9,7 +9,9 @@
       "Bash(git fetch:*)",
       "Bash(del \"D:\\\\PC-MEKNES\\\\nul\")",
       "Bash(git commit:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(firebase deploy:*)",
+      "Bash(/d/PC-MEKNES/SEO-FILES-INDEX.txt:*)"
     ]
   }
 }

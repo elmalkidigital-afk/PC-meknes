@@ -7,6 +7,7 @@ export const translations = {
     'nav-why': 'Pourquoi Nous',
     'nav-tarifs': 'Tarifs',
     'nav-parcours': 'Parcours',
+    'nav-blog': 'Blog',
     'nav-contact': 'Contact',
 
     // Hero
@@ -152,6 +153,18 @@ export const translations = {
     'parcours-item2-title': 'Installation à Meknès - Bassatine',
     'parcours-item2-desc': 'Désormais établi à Bassatine, je mets ce savoir-faire au service des particuliers et des professionnels de Meknès. Mon objectif est d\'offrir un service de proximité alliant expertise européenne et tarifs locaux abordables.',
 
+    // Blog
+    'blog-tag': 'Blog & Actualités',
+    'blog-title': 'Actualités <span class="text-gradient">PC MEKNES</span>',
+    'blog-desc': 'Conseils, astuces et actualités sur la réparation informatique avec PC MEKNES.',
+    'blog-art1-title': 'Pourquoi confier la réparation de votre ordinateur à PC MEKNES ?',
+    'blog-art1-desc': 'Découvrez pourquoi PC MEKNES est la référence locale pour la réparation PC. Diagnostic gratuit, intervention rapide et pièces de haute qualité garanties au cœur de Meknès.',
+    'blog-art2-title': 'Changement pâte thermique et nettoyage PC par PC MEKNES',
+    'blog-art2-desc': 'Votre PC surchauffe et fait du bruit ? Votre expert PC MEKNES vous explique l\'importance d\'un bon nettoyage interne et du changement régulier de la pâte thermique.',
+    'blog-art3-title': 'Montage PC Sur-Mesure et Upgrade avec PC MEKNES',
+    'blog-art3-desc': 'Besoin d\'un PC Gaming performant ou d\'une machine bureautique fluide ? PC MEKNES assemble votre ordinateur avec des composants choisis en fonction de votre budget.',
+    'blog-read-more': 'Lire la suite',
+
     // Contact
     'contact-tag': 'Contact',
     'contact-title': 'Contactez <span class="text-gradient">PC-MEKNES</span>',
@@ -199,6 +212,7 @@ export const translations = {
     'footer-opt': 'Optimisation',
     'footer-flash': 'Flash firmware',
     'footer-link-contact': 'Contact',
+    'footer-link-blog': 'Blog & Actualités',
     'footer-link-commit': 'Nos engagements',
     'footer-link-parcours': 'Notre parcours',
     'footer-link-legal': 'Mentions légales',
@@ -214,6 +228,7 @@ export const translations = {
     'nav-why': 'علاش حنا؟',
     'nav-tarifs': 'الأثمنة',
     'nav-parcours': 'المسار ديالنا',
+    'nav-blog': 'المدونة',
     'nav-contact': 'اتصل بنا',
 
     // Hero
@@ -359,6 +374,18 @@ export const translations = {
     'parcours-item2-title': 'الاستقرار فمكناس - البساتين',
     'parcours-item2-desc': 'دابا فالبساتين، كنحط هاد الخبرة رهن إشارة الناس والشركات فمكناس. الهدف ديالي هو نقدم خدمة احترافية بخبرة أوروبية وأثمنة محلية مناسبة.',
 
+    // Blog
+    'blog-tag': 'المدونة والأخبار',
+    'blog-title': 'أخبار <span class="text-gradient">PC MEKNES</span>',
+    'blog-desc': 'نصائح وأخبار على إصلاح الكومبيوتر مع PC MEKNES.',
+    'blog-art1-title': 'علاش خصك تخلي البيسي ديالك عند PC MEKNES؟',
+    'blog-art1-desc': 'تعرف علاش PC MEKNES هو أحسن اختيار فمكناس. تشخيص فابور، خدمة سريعة وقطع غيار أصلية ومضمونة.',
+    'blog-art2-title': 'تبديل عجينة التبريد وتنظيف البيسي مع PC MEKNES',
+    'blog-art2-desc': 'البيسي ديالك كيسخن وكيدير الصداع؟ PC MEKNES كيشرح ليك علاش خصك تنظف البيسي من الداخل وتبدل عجينة التبريد.',
+    'blog-art3-title': 'تركيب وتطوير بيسي على حساب الذوق ديالك مع PC MEKNES',
+    'blog-art3-desc': 'باغي بيسي ديال الألعاب ولا غير للخدمة؟ PC MEKNES كيجمع ليك البيسي اللي بغيتي على حساب الجيب ديالك.',
+    'blog-read-more': 'اقرأ المزيد',
+
     // Contact
     'contact-tag': 'اتصل بنا',
     'contact-title': 'اتصل بـ <span class="text-gradient">PC-MEKNES</span>',
@@ -406,6 +433,7 @@ export const translations = {
     'footer-opt': 'تحسين الأداء',
     'footer-flash': 'الفلاش',
     'footer-link-contact': 'اتصل بنا',
+    'footer-link-blog': 'المدونة والأخبار',
     'footer-link-commit': 'الالتزامات ديالنا',
     'footer-link-parcours': 'المسار ديالنا',
     'footer-link-legal': 'معلومات قانونية',
