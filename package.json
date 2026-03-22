@@ -1,13 +1,26 @@
 {
-  "name": "pc-meknes",
-  "version": "1.0.0",
-  "description": "Landing page PC-MEKNES - Réparation PC & Mobile à Meknès",
-  "scripts": {
-    "build": "echo 'Static site - no build needed'",
-    "start": "npx serve public -l 3000"
-  },
+  "name": "temp-app",
+  "version": "0.1.0",
   "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
   "dependencies": {
-    "@dataconnect/generated": "file:src/dataconnect-generated"
+    "next": "16.2.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.0",
+    "tailwindcss": "^4",
+    "typescript": "^5"
   }
 }
