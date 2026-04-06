@@ -1,7 +1,21 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import dynamic from "next/dynamic";
+
+const ScrollVideoSection = dynamic(
+  () => import("./components/ScrollVideoSection"),
+  { ssr: false }
+);
+const CardScanner = dynamic(
+  () => import("./components/CardScanner"),
+  { ssr: false }
+);
+const ConfettiOnMount = dynamic(
+  () => import("./components/Confetti").then((m) => m.default),
+  { ssr: false }
+);
 
 /* ─── Data ─────────────────────────────────────────────────── */
 
@@ -9,7 +23,7 @@ const NAV_LINKS = [
   { href: "#hero", label: "Accueil" },
   { href: "#services-pc", label: "Services PC" },
   { href: "#services-mobile", label: "Mobile" },
-  { href: "#pourquoi", label: "Pourquoi Nous" },
+  { href: "#pourquoi", label: "Pourquoi Moi" },
   { href: "#tarifs", label: "Tarifs" },
   { href: "#parcours", label: "Parcours" },
   { href: "#telepresence", label: "Télé-assistance" },
@@ -54,16 +68,6 @@ const SERVICES_PC = [
     features: ["Upgrade RAM & SSD", "Optimisation Windows", "Configuration gaming"],
   },
   {
-    icon: "fa-plug",
-    title: "Pilotes & Périphériques",
-    desc: "Installation et configuration de tous pilotes, imprimantes, scanners et périphériques connectés.",
-    features: [
-      "Pilotes officiels à jour",
-      "Configuration imprimante",
-      "Résolution conflits",
-    ],
-  },
-  {
     icon: "fa-shield-virus",
     title: "Virus & Sécurité",
     desc: "Suppression de virus, malwares, adwares et installation d'antivirus. Récupération de données.",
@@ -83,6 +87,16 @@ const SERVICES_PC = [
 ];
 
 const SERVICES_MOBILE = [
+  {
+    icon: "fa-battery-full",
+    title: "Remplacement Batterie",
+    desc: "Changement de batterie pour smartphones toutes marques.",
+  },
+  {
+    icon: "fa-mobile-screen",
+    title: "Remplacement Écran",
+    desc: "Réparation écran cassé ou tactile défaillant.",
+  },
   {
     icon: "fa-rotate-right",
     title: "Reset & Réinitialisation",
@@ -119,7 +133,7 @@ const ADVANTAGES = [
   {
     icon: "fa-eye",
     title: "Transparence",
-    desc: "Devis clair avant toute intervention. Pas de surprise, vous validez avant qu'on commence.",
+    desc: "Devis clair avant toute intervention. Pas de surprise, vous validez avant que je commence.",
   },
   {
     icon: "fa-location-dot",
@@ -154,7 +168,7 @@ const BLOG_ARTICLES = [
     date: "15 Mars 2026",
     title: "Pourquoi confier la réparation de votre ordinateur à PC MEKNES ?",
     desc: "Découvrez pourquoi PC MEKNES est la référence locale pour la réparation PC. Diagnostic gratuit, intervention rapide et pièces de haute qualité garanties au cœur de Meknès.",
-    href: "#",
+    href: "/blog/pourquoi-pc-meknes",
   },
   {
     img: "https://images.unsplash.com/photo-1756801370266-f589801cedc3?auto=format&fit=crop&q=80&w=800",
@@ -162,7 +176,7 @@ const BLOG_ARTICLES = [
     date: "10 Mars 2026",
     title: "Changement pâte thermique et nettoyage PC par PC MEKNES",
     desc: "Votre PC surchauffe et fait du bruit ? Votre expert PC MEKNES vous explique l'importance d'un bon nettoyage interne et du changement régulier de la pâte thermique.",
-    href: "#",
+    href: "/blog/pate-thermique-nettoyage",
   },
   {
     img: "https://images.unsplash.com/photo-1555680202-c86f0e12f086?auto=format&fit=crop&q=80&w=800",
@@ -170,12 +184,11 @@ const BLOG_ARTICLES = [
     date: "5 Mars 2026",
     title: "Montage PC Sur-Mesure et Upgrade avec PC MEKNES",
     desc: "Besoin d'un PC Gaming performant ou d'une machine bureautique fluide ? PC MEKNES assemble votre ordinateur avec des composants choisis en fonction de votre budget.",
-    href: "#",
+    href: "/blog/montage-pc-sur-mesure",
   },
 ];
 
-const LOGO_URL =
-  "https://res.cloudinary.com/dk93srhfb/image/upload/v1771355775/ChatGPT_Image_17_f%C3%A9vr._2026_16_22_21_ezmwm2.png";
+const LOGO_URL = "/logo.webp";
 const WA_URL =
   "https://wa.me/212699245542?text=Bonjour%2C%20je%20souhaite%20un%20diagnostic%20gratuit%20pour%20mon%20appareil.";
 
@@ -184,6 +197,15 @@ const WA_URL =
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [confettiReady, setConfettiReady] = useState(false);
+  const [confettiFired, setConfettiFired] = useState(false);
+
+  const handleScrollComplete = useCallback(() => {
+    if (!confettiFired) {
+      setConfettiReady(true);
+      setConfettiFired(true);
+    }
+  }, [confettiFired]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -381,8 +403,8 @@ export default function Home() {
           <div className="hidden lg:block relative">
             <div className="relative w-full aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl border border-white/20">
               <Image
-                src="https://images.unsplash.com/photo-1756801370266-f589801cedc3?auto=format&fit=crop&q=80&w=1200"
-                alt="Installation processeur CPU sur carte mère"
+                src="/laptop-ouvert.webp"
+                alt="PC portable ouvert - réparation informatique Meknès"
                 fill
                 sizes="(max-width: 1024px) 0vw, 50vw"
                 className="object-cover"
@@ -433,32 +455,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ── Scroll Video Animation ─────────────────────────── */}
+      <ScrollVideoSection onComplete={handleScrollComplete} />
+
+      {/* ── Card Scanner 3D ────────────────────────────────── */}
+      <CardScanner />
+
+      {/* ── Confetti (fires once when scroll animation ends) ─ */}
+      {confettiReady && (
+        <ConfettiOnMount delay={100} />
+      )}
+
       {/* ── Services PC ────────────────────────────────────── */}
       <section id="services-pc" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeader
-            tag="Nos Expertises"
+            tag="Mes Expertises"
             icon="fa-wrench"
             title="Services PC & Laptop"
             highlight="PC & Laptop"
             desc="Solutions complètes pour tous vos problèmes informatiques, du diagnostic à la réparation."
           />
-          {/* Banner image */}
-          <div className="relative mt-12 h-56 rounded-3xl overflow-hidden">
-            <Image
-              src="https://images.unsplash.com/photo-1768633647910-7e6fb53e5b0f?auto=format&fit=crop&q=80&w=1600"
-              alt="Techniciens PC Meknès travaillant sur une carte mère"
-              fill
-              sizes="100vw"
-              className="object-cover object-top"
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/85 via-blue-900/50 to-transparent" />
-            <div className="absolute left-8 top-1/2 -translate-y-1/2 text-white">
-              <span className="text-cyan-400 text-sm font-semibold uppercase tracking-wider">Expert certifié</span>
-              <h3 className="text-2xl font-bold mt-1">Expertise & Précision</h3>
-              <p className="text-blue-100 text-sm mt-1 max-w-xs">
-                Chaque réparation réalisée avec les bons outils et le soin qu&apos;elle mérite.
-              </p>
+          <div className="grid grid-cols-2 gap-3 mt-12 mb-2">
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-900">
+              <Image src="/laptop-ouvert.webp" alt="Réparation laptop gaming Meknès" fill sizes="50vw" className="object-contain" />
+            </div>
+            <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-900">
+              <Image src="/pc-gamer-evga.jpg" alt="PC gamer assemblage Meknès" fill sizes="50vw" className="object-cover" />
             </div>
           </div>
 
@@ -504,19 +527,26 @@ export default function Home() {
             icon="fa-mobile-screen"
             title="Services Téléphone"
             highlight="Téléphone"
-            desc="Interventions software uniquement pour smartphone et tablette."
+            desc="Réparation hardware et software pour smartphones et tablettes."
           />
           <div className="mt-16 max-w-4xl mx-auto space-y-4">
+            <div className="grid grid-cols-2 gap-3 mb-2">
+              <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-100">
+                <Image src="/batterie-mobile.webp" alt="Remplacement batterie smartphone Meknès" fill sizes="50vw" className="object-contain" />
+              </div>
+              <div className="relative aspect-square rounded-2xl overflow-hidden bg-slate-100">
+                <Image src="/ecran-mobile.webp" alt="Réparation écran smartphone Meknès" fill sizes="50vw" className="object-contain" />
+              </div>
+            </div>
             <div className="bg-white rounded-3xl p-8 shadow-sm border border-slate-100">
               <div className="flex items-start gap-4 mb-6">
                 <div className="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center shrink-0">
                   <i className="fas fa-microchip text-blue-700" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-xl">Interventions Software</h3>
+                  <h3 className="font-bold text-xl">Réparation Mobile</h3>
                   <p className="text-slate-500 text-sm mt-0.5">
-                    Nous nous spécialisons dans les solutions logicielles pour
-                    vos appareils mobiles :
+                    Interventions hardware et software pour vos smartphones et tablettes :
                   </p>
                 </div>
               </div>
@@ -537,15 +567,6 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-2xl p-5">
-              <i className="fas fa-triangle-exclamation text-amber-500 mt-0.5 shrink-0" />
-              <p className="text-amber-800 text-sm leading-relaxed">
-                <strong>Note :</strong> Nous ne proposons pas de réparations
-                hardware mobile (écran, batterie, connecteur). Nos interventions
-                sont exclusivement software pour garantir la meilleure expertise
-                possible.
-              </p>
-            </div>
           </div>
         </div>
       </section>
@@ -638,7 +659,7 @@ export default function Home() {
                   {
                     n: "01",
                     title: "Contactez-moi",
-                    desc: "Par WhatsApp ou formulaire, décrivez votre problème. On fixe un créneau d'intervention.",
+                    desc: "Par WhatsApp ou formulaire, décrivez votre problème. Je fixe un créneau d'intervention.",
                   },
                   {
                     n: "02",
@@ -695,7 +716,7 @@ export default function Home() {
       <section id="pourquoi" className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeader
-            tag="Nos Engagements"
+            tag="Mes Engagements"
             icon="fa-star"
             title="Pourquoi PC-MEKNES ?"
             highlight="PC-MEKNES"
@@ -725,7 +746,7 @@ export default function Home() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <SectionHeader
-            tag="Nos Tarifs"
+            tag="Mes Tarifs"
             icon="fa-tags"
             title="Prix Transparents"
             highlight="Transparents"
@@ -886,17 +907,17 @@ export default function Home() {
           <SectionHeader
             tag="Mon Parcours"
             icon="fa-graduation-cap"
-            title="Expertise France & Maroc"
-            highlight="France & Maroc"
-            desc="Une expertise technique forgée par des années d'expérience en Europe, maintenant à votre service à Meknès."
+            title="5 ans en France, maintenant à Meknès"
+            highlight="maintenant à Meknès"
+            desc="Une expertise technique forgée en France, maintenant à votre service à Meknès."
           />
           <div className="mt-16 grid lg:grid-cols-2 gap-12 items-center max-w-5xl mx-auto">
             {/* Image */}
             <div className="relative">
               <div className="relative h-80 rounded-3xl overflow-hidden shadow-xl">
                 <Image
-                  src="https://images.unsplash.com/photo-1646756089735-487709743361?auto=format&fit=crop&q=80&w=1200"
-                  alt="Technicien informatique Meknès - Abderrahman Elmalki"
+                  src="/ventirad2.jpg"
+                  alt="Réparation PC Meknès - changement pâte thermique"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   className="object-cover"
@@ -916,12 +937,12 @@ export default function Home() {
               {
                 icon: "fa-plane-arrival",
                 title: "5 Ans d'Expérience en France",
-                desc: "Avant mon installation à Meknès cette année, j'ai exercé pendant 5 ans en tant que technicien informatique en France. Cette expérience m'a permis de maîtriser les technologies les plus récentes et d'acquérir une rigueur professionnelle et une exigence de qualité élevées.",
+                desc: "J'ai exercé pendant 5 ans en tant que technicien informatique en France avant de m'installer à Meknès.",
               },
               {
                 icon: "fa-shop",
                 title: "Installation à Meknès – Bassatine",
-                desc: "Désormais établi à Bassatine, je mets ce savoir-faire au service des particuliers et des professionnels de Meknès. Mon objectif est d'offrir un service de proximité alliant expertise européenne et tarifs locaux abordables.",
+                desc: "Installé à Bassatine, j'interviens chez les particuliers et professionnels de Meknès. Tarifs locaux, travail sérieux.",
               },
             ].map((item, i) => (
               <div
@@ -1002,7 +1023,7 @@ export default function Home() {
             icon="fa-envelope"
             title="Contactez PC-MEKNES"
             highlight="PC-MEKNES"
-            desc="Diagnostic gratuit ! Décrivez votre problème et on vous rappelle."
+            desc="Diagnostic gratuit ! Décrivez votre problème et je vous rappelle."
           />
           <div className="mt-16 grid lg:grid-cols-2 gap-12">
             <ContactForm />
@@ -1185,8 +1206,8 @@ export default function Home() {
                 {[
                   { label: "Contact", href: "#contact" },
                   { label: "Blog & Actualités", href: "#blog" },
-                  { label: "Nos engagements", href: "#pourquoi" },
-                  { label: "Notre parcours", href: "#parcours" },
+                  { label: "Mes engagements", href: "#pourquoi" },
+                  { label: "Mon parcours", href: "#parcours" },
                 ].map((l) => (
                   <li key={l.label}>
                     <a
@@ -1308,7 +1329,7 @@ function ContactForm() {
         </div>
         <h3 className="font-bold text-xl mb-2">Message envoyé !</h3>
         <p className="text-slate-500 text-sm">
-          Merci pour votre demande. Nous vous contacterons dans les plus brefs
+          Merci pour votre demande. Je vous contacterai dans les plus brefs
           délais.
         </p>
         <button
